@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <!-- Chosen Palette: Slate-900 (Fundo) + Green-500 (Acento) + Blue-500 (Secundário) -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexias - Automação Inteligente para Seu Crescimento</title>
+    <title>Nexias - Automação Inteligente para Clínicas</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -15,7 +16,7 @@
             position: absolute;
             border-radius: 50%;
             filter: blur(80px);
-            opacity: 0.1;
+            opacity: 0.15;
             mix-blend-mode: multiply;
         }
         
@@ -32,6 +33,7 @@
             font-weight: bold;
             font-size: 0.875rem;
             color: white;
+            background-color: #22c55e; /* Green-500 */
         }
         
         .feature-card {
@@ -41,15 +43,22 @@
         
         .feature-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        }
-        
-        .stat-card {
-            background: linear-gradient(135deg, var(--from-color), var(--to-color));
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
         }
         
         .smooth-scroll {
             scroll-behavior: smooth;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            height: 300px; 
+            max-height: 400px;
+        } 
+        @media (min-width: 768px) {
+             .chart-container { 
+                height: 350px; 
+             } 
         }
     </style>
 </head>
@@ -59,12 +68,12 @@
         <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <div class="text-2xl font-bold text-white">Nexias</div>
             <nav class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
-                <a href="#funcionalidades" class="hover:text-white transition">Funcionalidades</a>
-                <a href="#beneficios" class="hover:text-white transition">Benefícios</a>
-                <a href="#resultados" class="hover:text-white transition">Resultados</a>
+                <a href="#solucao" class="hover:text-green-400 transition">Solução</a>
+                <a href="#roi" class="hover:text-green-400 transition">ROI</a>
+                <a href="#precificacao" class="hover:text-green-400 transition">Preços</a>
             </nav>
             <a href="#contato" class="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-full text-sm font-semibold transition">
-                Agende Demo →
+                Trial 30 Dias →
             </a>
         </div>
     </header>
@@ -80,255 +89,282 @@
             <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="text-center mb-12">
                     <div class="inline-flex gap-2 mb-6 px-4 py-2 bg-slate-800 rounded-full border border-slate-700">
-                        <span class="text-green-400 font-semibold">🤖 IA</span>
+                        <span class="text-green-400 font-semibold">🤖 Inteligência</span>
                         <span class="text-blue-400 font-semibold">⚡ Automação</span>
-                        <span class="text-purple-400 font-semibold">📊 Inteligência</span>
+                        <span class="text-green-400 font-semibold">📈 Crescimento</span>
                     </div>
                     
                     <h1 class="text-6xl sm:text-7xl lg:text-8xl font-bold leading-tight mb-6">
-                        Crescimento de Verdade Começa com
-                        <span class="text-green-400"> Automação Inteligente</span>
+                        Elimine as Faltas e Gerencie seu Negócio com
+                        <span class="text-green-400"> Automação de IA</span>
                     </h1>
                     
                     <p class="text-xl text-slate-300 mb-10 max-w-3xl mx-auto">
-                        Nexias automatiza os processos que mais consomem tempo da sua equipe. Lembretes via WhatsApp com IA, preenchimento automático de vagas, gestão de reputação. Tudo integrado em um só lugar.
+                        Nexias automatiza o essencial para clínicas e comércios locais: lembretes de WhatsApp com IA, otimização de agenda e gestão de reputação. Seu foco deve ser o seu cliente, não a logística.
                     </p>
 
                     <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
                         <a href="#contato" class="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-lg font-semibold transition transform hover:scale-105">
-                            Agende Uma Demonstração →
+                            Comece Seu Trial Gratuito →
                         </a>
-                        <a href="#resultados" class="text-green-400 hover:text-green-300 font-semibold px-8 py-4 border-2 border-green-400 rounded-lg transition">
-                            Veja os Resultados
+                        <a href="#roi" class="text-green-400 hover:text-green-300 font-semibold px-8 py-4 border-2 border-green-400 rounded-lg transition">
+                            Veja a Simulação de Lucro
                         </a>
-                    </div>
-
-                    <div class="flex flex-wrap justify-center gap-6 text-sm text-slate-300">
-                        <div class="flex items-center gap-2">
-                            <span>✓</span>
-                            <span>Sem cartão de crédito</span>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <span>✓</span>
-                            <span>Setup em 24 horas</span>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <span>✓</span>
-                            <span>Suporte dedicado</span>
-                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- O que Nexias faz por você -->
-        <section class="py-20 sm:py-28 bg-white">
+        <!-- Solução Modular (3 Pilares de Solução) -->
+        <section id="solucao" class="py-20 sm:py-28 bg-white">
             <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
                     <h2 class="text-4xl sm:text-5xl font-bold text-slate-900 mb-4">
-                        Com Nexias, sua equipe pode:
+                        Os Pilares da Automação com Nexias
                     </h2>
                     <p class="text-xl text-slate-600 max-w-3xl mx-auto">
-                        Automatizar o que consome tempo, focar no que importa: crescimento.
+                        Módulos de valor crescente para garantir estabilidade e faturamento.
                     </p>
                 </div>
 
                 <div class="grid md:grid-cols-3 gap-8">
-                    <!-- Card 1 -->
-                    <div class="relative p-8 rounded-2xl border-2 border-orange-200 bg-orange-50 hover:shadow-lg transition feature-card">
-                        <div class="badge-number" style="background-color: #f97316;">1</div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-3 mt-4">Conectar com Clientes de Forma Inteligente</h3>
+                    <!-- Card 1: Comunicação Inteligente (CORE) -->
+                    <div class="relative p-8 rounded-2xl border-2 border-green-200 bg-green-50 hover:shadow-lg transition feature-card">
+                        <div class="badge-number bg-green-600">1</div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 mt-4">Módulo CORE: Zero Faltas</h3>
                         <p class="text-slate-700">
-                            Lembretes automáticos via WhatsApp com IA que entende respostas. Confirme presença, reduza faltas, maximize sua agenda.
+                            Lembretes automáticos via WhatsApp com IA que entende respostas ambíguas. **O software se paga ao evitar 1 falta.**
                         </p>
                     </div>
 
-                    <!-- Card 2 -->
-                    <div class="relative p-8 rounded-2xl border-2 border-purple-200 bg-purple-50 hover:shadow-lg transition feature-card">
-                        <div class="badge-number" style="background-color: #a855f7;">2</div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-3 mt-4">Reduzir Tempo de Espera com Automação</h3>
+                    <!-- Card 2: Lista de Espera (UPSell) -->
+                    <div class="relative p-8 rounded-2xl border-2 border-blue-200 bg-blue-50 hover:shadow-lg transition feature-card">
+                        <div class="badge-number bg-blue-600">2</div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 mt-4">Módulo LISTA DE ESPERA</h3>
                         <p class="text-slate-700">
-                            Cancelamentos de última hora? Nexias oferece automaticamente a vaga para quem está na lista de espera. Sem perder receita.
+                            Preenche vagas de última hora automaticamente após um cancelamento. Transforma prejuízo em lucro imediato.
                         </p>
                     </div>
 
-                    <!-- Card 3 -->
-                    <div class="relative p-8 rounded-2xl border-2 border-cyan-200 bg-cyan-50 hover:shadow-lg transition feature-card">
-                        <div class="badge-number" style="background-color: #06b6d4;">3</div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-3 mt-4">Oferecer Cuidado Mais Acolhedor</h3>
+                    <!-- Card 3: Relatórios/Analytics (UPSell) -->
+                    <div class="relative p-8 rounded-2xl border-2 border-slate-300 bg-slate-100 hover:shadow-lg transition feature-card">
+                        <div class="badge-number bg-slate-800">3</div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 mt-4">Módulo PREMIUM (Analytics)</h3>
                         <p class="text-slate-700">
-                            Pesquisa NPS automática, gestão de detratores, feedback em tempo real. Transforme clientes em promotores.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Funcionalidades -->
-        <section id="funcionalidades" class="py-20 sm:py-28 bg-slate-50">
-            <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl sm:text-5xl font-bold text-slate-900 mb-4">
-                        O que Nexias faz por você
-                    </h2>
-                    <p class="text-xl text-slate-600 max-w-3xl mx-auto">
-                        Assistente de IA desenvolvido para automatizar sua operação.
-                    </p>
-                </div>
-
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="relative p-8 rounded-2xl bg-white border-l-4 border-green-500 shadow-md hover:shadow-lg transition">
-                        <h3 class="text-2xl font-bold text-slate-900 mb-3">Cobertura Completa da Jornada do Cliente</h3>
-                        <p class="text-slate-700">
-                            Da primeira mensagem ao pós-atendimento. WhatsApp integrado, fluxos automáticos, tudo em um só lugar.
-                        </p>
-                    </div>
-
-                    <div class="relative p-8 rounded-2xl bg-white border-l-4 border-blue-500 shadow-md hover:shadow-lg transition">
-                        <h3 class="text-2xl font-bold text-slate-900 mb-3">Automação Inteligente e Personalizada</h3>
-                        <p class="text-slate-700">
-                            Fluxos ajustáveis ao seu negócio. Cada etapa do atendimento é otimizada. Sem configuração complexa.
-                        </p>
-                    </div>
-
-                    <div class="relative p-8 rounded-2xl bg-white border-l-4 border-purple-500 shadow-md hover:shadow-lg transition">
-                        <h3 class="text-2xl font-bold text-slate-900 mb-3">Monitoramento em Tempo Real</h3>
-                        <p class="text-slate-700">
-                            Dashboard com indicadores de atendimento. Relatórios detalhados. Dados e insights para melhorar continuamente.
-                        </p>
-                    </div>
-
-                    <div class="relative p-8 rounded-2xl bg-white border-l-4 border-orange-500 shadow-md hover:shadow-lg transition">
-                        <h3 class="text-2xl font-bold text-slate-900 mb-3">Integração com Seus Sistemas</h3>
-                        <p class="text-slate-700">
-                            Conecta com agenda, CRM, prontuário eletrônico. API simples. Sem perder dados, sem retrabalho.
+                            Relatórios avançados de Produtividade, Inadimplência e Multi-Clínicas. Tome decisões baseadas em dados concretos.
                         </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Resultados -->
-        <section id="resultados" class="py-20 sm:py-28 bg-white">
-            <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl sm:text-5xl font-bold text-slate-900 mb-4">
-                        Resultados Comprovados
-                    </h2>
-                    <p class="text-xl text-slate-600 max-w-3xl mx-auto">
-                        Clientes Nexias veem impacto imediato em seus números.
-                    </p>
-                </div>
-
-                <div class="grid md:grid-cols-3 gap-8 mb-12">
-                    <div class="bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-2xl border border-green-200 text-center">
-                        <div class="text-5xl font-bold text-green-600 mb-2">85%</div>
-                        <p class="text-lg text-slate-700 font-semibold">Das Conversas Resolvidas pela IA</p>
-                        <p class="text-sm text-slate-600 mt-2">Sem intervenção humana</p>
-                    </div>
-
-                    <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-2xl border border-blue-200 text-center">
-                        <div class="text-5xl font-bold text-blue-600 mb-2">72%</div>
-                        <p class="text-lg text-slate-700 font-semibold">Redução de Faltas</p>
-                        <p class="text-sm text-slate-600 mt-2">Nos primeiros 30 dias</p>
-                    </div>
-
-                    <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-2xl border border-purple-200 text-center">
-                        <div class="text-5xl font-bold text-purple-600 mb-2">3x</div>
-                        <p class="text-lg text-slate-700 font-semibold">ROI Médio</p>
-                        <p class="text-sm text-slate-600 mt-2">Em 90 dias</p>
-                    </div>
-                </div>
-
-                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 max-w-3xl mx-auto">
-                    <p class="text-lg text-slate-700 mb-4">
-                        "Com Nexias, tivemos um impacto direto na eficiência operacional e na economia financeira. A automação de confirmações de consultas reduziu nossas faltas em mais de 70%, e o sistema se pagou em menos de um mês."
-                    </p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white font-bold">JM</div>
-                        <div>
-                            <p class="font-semibold text-slate-900">João Martins</p>
-                            <p class="text-sm text-slate-600">Gerente, Clínica Vida</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Benefícios -->
-        <section id="beneficios" class="py-20 sm:py-28 bg-slate-900 text-white">
+        <!-- Detalhe de Funcionalidades (Onde a IA atua) -->
+        <section id="funcionalidades" class="py-20 sm:py-28 bg-slate-900 text-white">
             <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
                     <h2 class="text-4xl sm:text-5xl font-bold mb-4">
-                        Por que escolher Nexias?
+                        A Tecnologia de IA Por Trás da Eficiência
                     </h2>
-                    <p class="text-xl text-slate-300 max-w-3xl mx-auto">
-                        Mais que um software. Uma transformação operacional.
+                    <p class="text-xl text-slate-400 max-w-3xl mx-auto">
+                        Nossa arquitetura modular (tRPC, Drizzle, Node-cron) garante velocidade e segurança.
                     </p>
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-8">
-                    <div class="flex gap-4">
-                        <div class="flex-shrink-0">
-                            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-green-500 text-white">✓</div>
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-semibold mb-2">Implementação Rápida</h3>
-                            <p class="text-slate-300">Setup em 24 horas. Sem necessidade de mudança de sistemas.</p>
-                        </div>
+                    
+                    <!-- Feature 1: Processamento de Linguagem Natural -->
+                    <div class="relative p-8 rounded-2xl bg-slate-800 border-l-4 border-green-500 shadow-xl">
+                        <h3 class="text-2xl font-bold text-white mb-3">IA que Entende e Age</h3>
+                        <p class="text-slate-300">
+                            O Processamento de Linguagem Natural (LLM) classifica a intenção do paciente (SIM, NÃO, Reagendar) mesmo com erros de digitação e atualiza sua agenda sem toque manual.
+                        </p>
                     </div>
 
-                    <div class="flex gap-4">
-                        <div class="flex-shrink-0">
-                            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-green-500 text-white">✓</div>
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-semibold mb-2">Suporte 24/7</h3>
-                            <p class="text-slate-300">Time dedicado pronto para ajudar. Chat, email, telefone.</p>
-                        </div>
+                    <!-- Feature 2: Agendamento Preciso -->
+                    <div class="relative p-8 rounded-2xl bg-slate-800 border-l-4 border-blue-500 shadow-xl">
+                        <h3 class="text-2xl font-bold text-white mb-3">Cron Jobs de Alta Precisão</h3>
+                        <p class="text-slate-300">
+                            Nosso scheduler verifica a agenda a cada 60 minutos, calcula fusos horários e dispara mensagens na janela ideal, garantindo a conformidade e a melhor taxa de resposta.
+                        </p>
                     </div>
 
-                    <div class="flex gap-4">
-                        <div class="flex-shrink-0">
-                            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-green-500 text-white">✓</div>
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-semibold mb-2">Segurança de Dados</h3>
-                            <p class="text-slate-300">Certificação LGPD. Criptografia end-to-end. Backup automático.</p>
-                        </div>
+                    <!-- Feature 3: Webhook e Sincronia -->
+                    <div class="relative p-8 rounded-2xl bg-slate-800 border-l-4 border-green-500 shadow-xl">
+                        <h3 class="text-2xl font-bold text-white mb-3">Sincronia em Tempo Real</h3>
+                        <p class="text-slate-300">
+                            Webhook do WhatsApp recebe respostas instantaneamente. O status do agendamento é atualizado no banco de dados Drizzle de forma imediata.
+                        </p>
                     </div>
 
-                    <div class="flex gap-4">
-                        <div class="flex-shrink-0">
-                            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-green-500 text-white">✓</div>
+                    <!-- Feature 4: Feedback NPS (Novo Benefício Core) -->
+                    <div class="relative p-8 rounded-2xl bg-slate-800 border-l-4 border-blue-500 shadow-xl">
+                        <h3 class="text-2xl font-bold text-white mb-3">Bônus: Gestão de Reputação NPS</h3>
+                        <p class="text-slate-300">
+                            Pesquisa de satisfação (NPS) automática pós-consulta. Transforme pacientes promotores em depoimentos e evite crises com detratores.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ROI Section com Gráfico de Perdas (Simulação Sincera) -->
+        <section id="roi" class="py-20 sm:py-28 bg-white">
+            <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl sm:text-5xl font-bold text-slate-900 mb-4">
+                        O ROI Imediato: Reduza Faltas em 85%
+                    </h2>
+                    <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+                        Veja o impacto financeiro da Automação de IA na sua taxa de no-show e no seu faturamento.
+                    </p>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    
+                    <!-- Texto Dinâmico e Argumentos de Valor -->
+                    <div class="space-y-6">
+                        <h3 class="text-2xl font-bold text-slate-900">O Cálculo de Investimento</h3>
+                        <p class="text-lg text-slate-700">
+                            Nosso **Módulo CORE** (R$ 99/mês) é o investimento mais seguro que sua clínica pode fazer. Ele se paga se você evitar que apenas **uma consulta** de R$ 99 seja perdida.
+                        </p>
+                        
+                        <div class="space-y-4 p-6 bg-green-50 rounded-xl border border-green-300">
+                            <div class="flex items-start gap-4">
+                                <span class="text-2xl text-slate-900 flex-shrink-0">✅</span>
+                                <div>
+                                    <p class="font-semibold text-slate-900">Retorno Garantido</p>
+                                    <p class="text-slate-800 text-sm">Seu investimento no CORE tem um ROI imediato superior a 100% ao evitar a primeira falta.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <span class="text-2xl text-slate-900 flex-shrink-0">🚀</span>
+                                <div>
+                                    <p class="font-semibold text-slate-900">Potencial de Lucro (Upsell)</p>
+                                    <p class="text-slate-800 text-sm">Ao adicionar o Módulo **LISTA DE ESPERA**, o potencial de receita recuperada supera R$ 3.000 mensais.</p>
+                                </div>
+                            </div>
                         </div>
-                        <div>
-                            <h3 class="text-lg font-semibold mb-2">Sem Contrato Longo</h3>
-                            <p class="text-slate-300">Mensalidade flexível. Cancele quando quiser. Sem multa.</p>
+
+                        <div class="flex items-center gap-4 pt-4">
+                            <span class="text-sm text-slate-600">Ficou com dúvidas sobre o ROI?</span>
+                            <a href="#contato" class="text-green-600 font-semibold hover:text-green-800 transition duration-300">
+                                Fale com um consultor
+                            </a>
                         </div>
+                    </div>
+                    
+                    <!-- Chart Container 1: Redução de Faltas (Gráfico Único e Simples) -->
+                    <div class="bg-slate-100 p-8 rounded-2xl shadow-lg h-full flex flex-col justify-between">
+                        <h3 class="text-xl font-semibold text-slate-800 mb-4 text-center">Redução de No-Show Estimada (%)</h3>
+                        <div class="chart-container flex-1">
+                            <canvas id="noShowChart"></canvas>
+                        </div>
+                        <p class="text-sm text-slate-500 mt-4 text-center">
+                            A meta é reduzir a taxa média de faltas (15%) para menos de 2% com a automação.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        
+        <!-- Módulos e Precificação Section -->
+        <section id="precificacao" class="py-20 sm:py-28 bg-slate-900 text-white">
+            <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl sm:text-5xl font-bold mb-4">
+                        Planos Modulares
+                    </h2>
+                    <p class="text-xl text-slate-400 max-w-3xl mx-auto">
+                        Comece pelo básico e adicione módulos de crescimento conforme sua necessidade.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
+                    
+                    <!-- Módulo 1: CORE (Starter) -->
+                    <div class="bg-slate-800 shadow-xl p-6 rounded-2xl border-4 border-green-500 flex flex-col transform hover:scale-[1.02] transition duration-300">
+                        <h3 class="text-xl font-bold text-green-400">MÓDULO CORE</h3>
+                        <p class="text-slate-400 mt-1 mb-4">Estabilidade Garantida.</p>
+                        <p class="text-5xl font-extrabold text-white">R$ 99<span class="text-base font-normal text-slate-400">/mês</span></p>
+                        <ul class="mt-6 space-y-3 text-slate-200 flex-1">
+                            <li class="flex items-start gap-2 text-sm"><span class="text-green-400 mt-0.5">✓</span> Lembretes WhatsApp c/ IA</li>
+                            <li class="flex items-start gap-2 text-sm"><span class="text-green-400 mt-0.5">✓</span> Processamento de Resposta (SIM/NÃO)</li>
+                            <li class="flex items-start gap-2 text-sm"><span class="text-green-400 mt-0.5">✓</span> Gerenciamento Básico de Agenda</li>
+                            <li class="flex items-start gap-2 text-sm"><span class="text-green-400 mt-0.5">⭐</span> **Bônus:** Feedback NPS Automático</li>
+                        </ul>
+                        <a href="#contato" class="mt-6 w-full text-center bg-green-500 hover:bg-green-600 text-white py-3 rounded-lg font-bold transition duration-300">
+                            Iniciar Trial Gratuito
+                        </a>
+                    </div>
+                    
+                    <!-- Módulo 2: LISTA DE ESPERA (Upsell 1) -->
+                    <div class="bg-slate-800 shadow-xl p-6 rounded-2xl border-4 border-slate-700 flex flex-col">
+                        <h3 class="text-xl font-bold text-white">LISTA DE ESPERA</h3>
+                        <p class="text-slate-400 mt-1 mb-4">Agenda 100% Ocupada.</p>
+                        <p class="text-5xl font-extrabold text-white">+ R$ 120<span class="text-base font-normal text-slate-400">/mês</span></p>
+                        <ul class="mt-6 space-y-3 text-slate-200 flex-1">
+                            <li class="flex items-start gap-2 text-sm"><span class="text-green-400 mt-0.5">✓</span> Tudo do Módulo CORE</li>
+                            <li class="flex items-start gap-2 text-sm"><span class="text-green-400 mt-0.5">✓</span> Preenchimento de Vagas (Last-Minute)</li>
+                            <li class="flex items-start gap-2 text-sm"><span class="text-green-400 mt-0.5">✓</span> Monitoramento de Cancelamentos em Tempo Real</li>
+                        </ul>
+                        <a href="#contato" class="mt-6 w-full text-center bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-lg font-bold transition duration-300">
+                            Falar com Vendas
+                        </a>
+                    </div>
+
+                    <!-- Módulo 3: MARKETING IA (Upsell 2) -->
+                    <div class="bg-slate-800 shadow-xl p-6 rounded-2xl border-4 border-slate-700 flex flex-col">
+                        <h3 class="text-xl font-bold text-white">MARKETING IA</h3>
+                        <p class="text-slate-400 mt-1 mb-4">Criação de Conteúdo e Engajamento.</p>
+                        <p class="text-5xl font-extrabold text-white">+ R$ 150<span class="text-base font-normal text-slate-400">/mês</span></p>
+                        <ul class="mt-6 space-y-3 text-slate-200 flex-1">
+                            <li class="flex items-start gap-2 text-sm"><span class="text-green-400 mt-0.5">✓</span> Tudo do Módulo CORE</li>
+                            <li class="flex items-start gap-2 text-sm"><span class="text-green-400 mt-0.5">✓</span> Geração de Posts/Artigos para Redes Sociais</li>
+                            <li class="flex items-start gap-2 text-sm"><span class="text-green-400 mt-0.5">✓</span> Criação de Campanhas de Engajamento por Email/WA</li>
+                        </ul>
+                        <a href="#contato" class="mt-6 w-full text-center bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-lg font-bold transition duration-300">
+                            Falar com Vendas
+                        </a>
+                    </div>
+                    
+                    <!-- Módulo 4: PREMIUM -->
+                    <div class="bg-slate-800 shadow-xl p-6 rounded-2xl border-4 border-slate-700 flex flex-col">
+                        <h3 class="text-xl font-bold text-white">ENTERPRISE</h3>
+                        <p class="text-slate-400 mt-1 mb-4">Escala e Faturamento Ilimitado.</p>
+                        <p class="text-5xl font-extrabold text-white">R$ 999<span class="text-base font-normal text-slate-400">/mês</span></p>
+                        <ul class="mt-6 space-y-3 text-slate-200 flex-1">
+                            <li class="flex items-start gap-2 text-sm"><span class="text-green-400 mt-0.5">✓</span> Todos os Módulos Anteriores</li>
+                            <li class="flex items-start gap-2 text-sm"><span class="text-green-400 mt-0.5">✓</span> Gerenciamento Multi-Clínicas</li>
+                            <li class="flex items-start gap-2 text-sm"><span class="text-green-400 mt-0.5">✓</span> Relatórios Avançados de Inadimplência/Produtividade</li>
+                            <li class="flex items-start gap-2 text-sm"><span class="text-green-400 mt-0.5">✓</span> Gerente de Contas Dedicado</li>
+                        </ul>
+                        <a href="#contato" class="mt-6 w-full text-center bg-red-500 hover:bg-red-600 text-white py-3 rounded-lg font-bold transition duration-300">
+                            Consultoria Exclusiva
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- CTA Final -->
-        <section id="contato" class="py-20 sm:py-28 bg-gradient-to-r from-green-500 to-green-600">
+        <section id="contato" class="py-20 sm:py-28 bg-gradient-to-r from-green-500 to-blue-500">
             <div class="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-12 text-white">
                     <h2 class="text-4xl sm:text-5xl font-bold mb-4">
-                        Pronto para Crescer?
+                        Pronto para Iniciar Seu Crescimento?
                     </h2>
                     <p class="text-xl font-light">
-                        Agende uma demonstração gratuita. Sem compromisso.
+                        Agende uma demonstração e ative seu Trial Gratuito do Módulo CORE.
                     </p>
                 </div>
 
                 <form id="demoForm" class="bg-white p-8 rounded-2xl shadow-2xl">
                     <div class="grid md:grid-cols-2 gap-6 mb-6">
-                        <input type="text" id="name" placeholder="Seu Nome Completo" required class="h-12 px-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
-                        <input type="email" id="email" placeholder="Seu Email" required class="h-12 px-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
-                        <input type="tel" id="phone" placeholder="WhatsApp (com DDD)" required class="h-12 px-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
-                        <select id="segment" required class="h-12 px-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                        <input type="text" id="form-name" placeholder="Seu Nome Completo" required class="h-12 px-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                        <input type="email" id="form-email" placeholder="Seu Email" required class="h-12 px-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                        <input type="tel" id="form-phone" placeholder="WhatsApp (com DDD)" required class="h-12 px-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                        <select id="form-segment" required class="h-12 px-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
                             <option value="">Tipo de Negócio</option>
                             <option value="Odontologia">Odontologia</option>
                             <option value="Medicina">Medicina</option>
@@ -341,8 +377,8 @@
                     <button type="submit" class="w-full bg-slate-900 hover:bg-slate-800 text-white h-12 text-lg font-semibold rounded-lg transition">
                         Agendar Demonstração Gratuita
                     </button>
-                    <p class="text-sm text-slate-600 text-center mt-4">
-                        Responderemos em até 2 horas. Sem spam, promessa.
+                    <p id="form-message" class="text-sm text-slate-600 text-center mt-4 hidden">
+                        Sua demonstração foi agendada! Um de nossos agentes entrará em contato em breve.
                     </p>
                 </form>
             </div>
@@ -360,16 +396,16 @@
                 <div>
                     <p class="font-semibold text-white mb-4">Produto</p>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="#funcionalidades" class="hover:text-white transition">Funcionalidades</a></li>
-                        <li><a href="#resultados" class="hover:text-white transition">Resultados</a></li>
-                        <li><a href="#beneficios" class="hover:text-white transition">Benefícios</a></li>
+                        <li><a href="#funcionalidades" class="hover:text-white transition">Solução</a></li>
+                        <li><a href="#roi" class="hover:text-white transition">ROI & Módulos</a></li>
+                        <li><a href="#precificacao" class="hover:text-white transition">Preços</a></li>
                     </ul>
                 </div>
                 <div>
                     <p class="font-semibold text-white mb-4">Empresa</p>
                     <ul class="space-y-2 text-sm">
                         <li><a href="#" class="hover:text-white transition">Blog</a></li>
-                        <li><a href="#" class="hover:text-white transition">Contato</a></li>
+                        <li><a href="#contato" class="hover:text-white transition">Contato</a></li>
                         <li><a href="#" class="hover:text-white transition">Suporte</a></li>
                     </ul>
                 </div>
@@ -387,8 +423,92 @@
         </div>
     </footer>
 
+    <!-- Bibliotecas JS (Carregamento garantido) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+
     <script>
-        // Smooth scroll behavior
+        const PRIMARY_COLOR = 'rgb(34, 197, 94)'; 
+        const SECONDARY_COLOR = 'rgb(59, 130, 246)'; 
+        const FAILURE_COLOR = 'rgb(249, 115, 22)'; 
+
+        function initNoShowChart() {
+            const ctx = document.getElementById('noShowChart').getContext('2d');
+            
+            const data = {
+                labels: ['Taxa Média de Faltas (Brasil)', 'Seu Negócio com Nexias'],
+                datasets: [{
+                    label: 'Faltas (%)',
+                    data: [15, 2], 
+                    backgroundColor: [
+                        'rgba(249, 115, 22, 0.7)', 
+                        PRIMARY_COLOR 
+                    ],
+                    borderColor: [
+                        FAILURE_COLOR,
+                        PRIMARY_COLOR
+                    ],
+                    borderWidth: 1,
+                    borderRadius: 8,
+                }]
+            };
+
+            new Chart(ctx, {
+                type: 'bar',
+                data: data,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false,
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.dataset.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.parsed.y !== null) {
+                                        label += context.parsed.y + '%';
+                                    }
+                                    return label;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                             grid: { display: false }
+                        },
+                        y: {
+                            beginAtZero: true,
+                            max: 20,
+                            title: {
+                                display: true,
+                                text: 'Taxa de Faltas (%)',
+                                font: { size: 14, weight: '600' }
+                            },
+                            ticks: {
+                                callback: function(value) {
+                                    return value + '%';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        /* REMOVEMOS A FUNÇÃO initRoiSimulationChart */
+
+        function initAllCharts() {
+            initNoShowChart();
+            /* NÃO CHAMAMOS initRoiSimulationChart AQUI */
+        }
+
+        window.onload = initAllCharts;
+
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -399,22 +519,24 @@
             });
         });
 
-        // Form submission
         document.getElementById('demoForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
             const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value,
-                segment: document.getElementById('segment').value
+                name: document.getElementById('form-name').value,
+                email: document.getElementById('form-email').value,
+                phone: document.getElementById('form-phone').value,
+                segment: document.getElementById('form-segment').value
             };
 
-            console.log('Formulário enviado:', formData);
+            const msgBox = document.getElementById('form-message');
             
-            // Simular envio
-            alert('Demonstração agendada! Verifique seu email.');
+            msgBox.textContent = 'Demonstração agendada! Um de nossos agentes entrará em contato em breve.';
+            msgBox.classList.remove('hidden');
+            msgBox.classList.add('text-green-500');
+
             this.reset();
+            window.location.href = '#contato'; 
         });
     </script>
 </body>
