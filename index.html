@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Chosen Palette: Indigo/Blue + Gray/White -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexias.app - Automação Inteligente para Clínicas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fc;
+        }
+        .container-padding {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        @media (min-width: 640px) {
+            .container-padding {
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+        }
+        @media (min-width: 1024px) {
+            .container-padding {
+                padding-left: 4rem;
+                padding-right: 4rem;
+            }
+        }
+        .text-shadow-hero {
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+        }
+        .card {
+            box-shadow: 0 10px 30px -5px rgba(44, 47, 65, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .cta-button {
+            transition: background-color 0.3s ease;
+        }
+        .feature-icon {
+            color: #4f46e5;
+        }
+        .price-card-glow {
+            transition: all 0.3s ease;
+        }
+        .price-card-glow:hover {
+            box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.4);
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container-padding mx-auto flex items-center justify-between h-16">
+            <h1 class="text-2xl font-extrabold text-indigo-600 tracking-tight">Nexias.app</h1>
+            <nav class="hidden md:flex space-x-6 text-sm font-medium text-gray-600">
+                <a href="#solucao" class="hover:text-indigo-600 transition duration-150">Solução</a>
+                <a href="#modulos" class="hover:text-indigo-600 transition duration-150">Módulos</a>
+                <a href="#roi" class="hover:text-indigo-600 transition duration-150">ROI</a>
+                <a href="#contato" class="hover:text-indigo-600 transition duration-150">Contato</a>
+            </nav>
+            <a href="#contato" class="cta-button bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg text-sm font-semibold shadow-md transition duration-300">
+                Teste Grátis
+            </a>
+        </div>
+    </header>
+
+    <main>
+        
+        <!-- Hero Section -->
+        <section id="hero" class="relative bg-white py-24 sm:py-32 overflow-hidden">
+            <div class="container-padding mx-auto max-w-7xl relative z-10">
+                <div class="lg:grid lg:grid-cols-12 lg:gap-8">
+                    <div class="lg:col-span-6 lg:text-left text-center">
+                        <span class="inline-flex items-center rounded-full bg-indigo-50 px-3 py-1 text-sm font-medium text-indigo-700 ring-1 ring-inset ring-indigo-600/20 mb-4">
+                            Automação Inteligente para Saúde
+                        </span>
+                        <h2 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-gray-900 leading-tight text-shadow-hero">
+                            Elimine Faltas e Garanta **Zero Agenda Ociosa** com IA.
+                        </h2>
+                        <p class="mt-6 text-xl text-gray-600 max-w-xl mx-auto lg:mx-0">
+                            A Nexias.app é a plataforma modular que usa WhatsApp e Inteligência Artificial para recuperar R$ 1.500/mês em receita perdida e automatizar seu marketing.
+                        </p>
+                        <div class="mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                            <a href="#modulos" class="cta-button bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-xl text-lg font-semibold shadow-xl transition duration-300 transform hover:scale-105">
+                                Conheça os Módulos
+                            </a>
+                            <a href="#roi" class="text-indigo-600 hover:text-indigo-700 font-semibold text-lg py-3 px-4 transition duration-300">
+                                📊 Veja o ROI Imediato →
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Chart for Visual Impact (Mock Data: No-Show Reduction) -->
+                    <div class="lg:col-span-6 mt-12 lg:mt-0 flex justify-center">
+                        <div class="bg-white card p-6 rounded-2xl w-full max-w-md lg:max-w-lg">
+                            <h3 class="text-xl font-semibold mb-4 text-gray-700">Taxa de Confirmação (Antes vs. Depois)</h3>
+                            <div class="chart-container w-full h-64 md:h-80">
+                                <canvas id="noShowChart"></canvas>
+                            </div>
+                            <p class="text-sm text-center text-gray-500 mt-4">Redução média de 90% dos *no-shows*.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Background wave/pattern -->
+            <div class="absolute inset-0 bg-indigo-50/50 clip-path-hero"></div>
+        </section>
+
+        <!-- Solução Modular Section -->
+        <section id="solucao" class="py-20 sm:py-24 bg-gray-50">
+            <div class="container-padding mx-auto max-w-5xl text-center">
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+                    Da Confirmação à Fidelização, tudo automatizado.
+                </h2>
+                <p class="text-lg text-gray-600 mb-12">
+                    A Nexias.app resolve os três maiores problemas da gestão de clínicas com uma plataforma modular e inteligente.
+                </p>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Card 1: Zero Faltas -->
+                    <div class="bg-white card p-6 rounded-2xl border-t-4 border-indigo-500 hover:shadow-xl">
+                        <span class="text-4xl mb-3 block feature-icon">🗓️</span>
+                        <h3 class="text-xl font-semibold mb-2">Zero Faltas (Módulo CORE)</h3>
+                        <p class="text-gray-600">Automação de lembretes via WhatsApp com IA que processa respostas como "sim" ou "não", atualizando a agenda automaticamente.</p>
+                    </div>
+                    <!-- Card 2: Agenda Cheia -->
+                    <div class="bg-white card p-6 rounded-2xl border-t-4 border-indigo-500 hover:shadow-xl">
+                        <span class="text-4xl mb-3 block feature-icon">🚀</span>
+                        <h3 class="text-xl font-semibold mb-2">Agenda 100% Ocupada</h3>
+                        <p class="text-gray-600">O Módulo **Lista de Espera** preenche automaticamente cancelamentos de última hora, revertendo prejuízo em lucro imediato.</p>
+                    </div>
+                    <!-- Card 3: Reputação 5 Estrelas -->
+                    <div class="bg-white card p-6 rounded-2xl border-t-4 border-indigo-500 hover:shadow-xl">
+                        <span class="text-4xl mb-3 block feature-icon">⭐</span>
+                        <h3 class="text-xl font-semibold mb-2">Reputação e Crescimento</h3>
+                        <p class="text-gray-600">Pesquisa de satisfação (NPS) automática pós-consulta, transformando pacientes satisfeitos em promotores ativos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Módulos e Precificação Section -->
+        <section id="modulos" class="py-20 sm:py-24">
+            <div class="container-padding mx-auto max-w-7xl text-center">
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+                    Escolha o Módulo Ideal para Sua Clínica
+                </h2>
+                <p class="text-lg text-gray-600 mb-12 max-w-3xl mx-auto">
+                    Comece pelo CORE e adicione módulos conforme sua clínica cresce. Sem contratos longos, sem taxas escondidas.
+                </p>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
+                    
+                    <!-- Módulo 1: CORE (Base) -->
+                    <div class="bg-white price-card-glow card p-6 rounded-2xl border-4 border-indigo-100 flex flex-col">
+                        <h3 class="text-xl font-bold text-indigo-600">CORE (Starter)</h3>
+                        <p class="text-gray-500 mt-1 mb-4">Essencial para Estabilidade.</p>
+                        <p class="text-4xl font-extrabold text-gray-900">R$ 99<span class="text-base font-normal text-gray-500">/mês</span></p>
+                        <ul class="mt-6 space-y-3 text-gray-700 flex-1">
+                            <li class="flex items-center gap-2"><span class="text-indigo-500">✔</span> Lembretes WhatsApp c/ IA</li>
+                            <li class="flex items-center gap-2"><span class="text-indigo-500">✔</span> Agendamentos em Tempo Real</li>
+                            <li class="flex items-center gap-2"><span class="text-indigo-500">✔</span> Gestão de Clínicas e Usuários</li>
+                        </ul>
+                        <a href="#contato" class="mt-6 w-full text-center bg-indigo-600 hover:bg-indigo-700 text-white py-2.5 rounded-lg font-semibold transition duration-300">
+                            Iniciar Trial Gratuito
+                        </a>
+                    </div>
+                    
+                    <!-- Módulo 2: FEEDBACK IA -->
+                    <div class="bg-white price-card-glow card p-6 rounded-2xl border-4 border-gray-200 flex flex-col">
+                        <h3 class="text-xl font-bold text-gray-700">FEEDBACK IA</h3>
+                        <p class="text-gray-500 mt-1 mb-4">Focado em Reputação e Retenção.</p>
+                        <p class="text-4xl font-extrabold text-gray-900">R$ 199<span class="text-base font-normal text-gray-500">/mês</span></p>
+                        <ul class="mt-6 space-y-3 text-gray-700 flex-1">
+                            <li class="flex items-center gap-2"><span class="text-indigo-500">✔</span> Tudo do CORE</li>
+                            <li class="flex items-center gap-2"><span class="text-indigo-500">✔</span> Pesquisa NPS Automática (Pós-Consulta)</li>
+                            <li class="flex items-center gap-2"><span class="text-indigo-500">✔</span> Gestão e Notificação de Detratores</li>
+                        </ul>
+                        <a href="#contato" class="mt-6 w-full text-center bg-gray-200 hover:bg-indigo-500 text-gray-700 hover:text-white py-2.5 rounded-lg font-semibold transition duration-300">
+                            Adicionar
+                        </a>
+                    </div>
+
+                    <!-- Módulo 3: LISTA DE ESPERA -->
+                    <div class="bg-white price-card-glow card p-6 rounded-2xl border-4 border-gray-200 flex flex-col">
+                        <h3 class="text-xl font-bold text-gray-700">LISTA DE ESPERA</h3>
+                        <p class="text-gray-500 mt-1 mb-4">Eficiência e Agenda Cheia.</p>
+                        <p class="text-4xl font-extrabold text-gray-900">R$ 319<span class="text-base font-normal text-gray-500">/mês</span></p>
+                        <ul class="mt-6 space-y-3 text-gray-700 flex-1">
+                            <li class="flex items-center gap-2"><span class="text-indigo-500">✔</span> Tudo do Módulo Feedback IA</li>
+                            <li class="flex items-center gap-2"><span class="text-indigo-500">✔</span> Sistema de Preenchimento de Vagas (Last-Minute)</li>
+                            <li class="flex items-center gap-2"><span class="text-indigo-500">✔</span> Monitoramento de Cancelamentos em Tempo Real</li>
+                        </ul>
+                        <a href="#contato" class="mt-6 w-full text-center bg-gray-200 hover:bg-indigo-500 text-gray-700 hover:text-white py-2.5 rounded-lg font-semibold transition duration-300">
+                            Adicionar
+                        </a>
+                    </div>
+                    
+                    <!-- Módulo 4: PREMIUM/ENTERPRISE -->
+                    <div class="bg-indigo-600 price-card-glow card p-6 rounded-2xl border-4 border-indigo-800 flex flex-col text-white">
+                        <h3 class="text-xl font-bold">PREMIUM</h3>
+                        <p class="text-indigo-200 mt-1 mb-4">Inteligência de Negócios e Escala.</p>
+                        <p class="text-4xl font-extrabold">R$ 999<span class="text-base font-normal text-indigo-200">/mês</span></p>
+                        <ul class="mt-6 space-y-3 flex-1">
+                            <li class="flex items-center gap-2"><span class="text-indigo-200">✔</span> Todos os Módulos Anteriores</li>
+                            <li class="flex items-center gap-2"><span class="text-indigo-200">✔</span> Relatórios de Inadimplência/Produtividade</li>
+                            <li class="flex items-center gap-2"><span class="text-indigo-200">✔</span> Gerenciamento Multi-Clínicas</li>
+                            <li class="flex items-center gap-2"><span class="text-indigo-200">✔</span> Gerente de Contas Dedicado</li>
+                        </ul>
+                        <a href="#contato" class="mt-6 w-full text-center bg-white text-indigo-600 hover:bg-gray-100 py-2.5 rounded-lg font-semibold transition duration-300">
+                            Falar com Consultor
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ROI Section -->
+        <section id="roi" class="py-20 sm:py-24 bg-white">
+            <div class="container-padding mx-auto max-w-7xl">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+                            Nosso ROI é Garantido: Você Paga, o Software Paga Você.
+                        </h2>
+                        <p class="text-lg text-gray-600 mb-8">
+                            A Nexias.app não é um custo, é um investimento. O módulo CORE se paga se você evitar que apenas um paciente falte a uma consulta de R$ 99.
+                        </p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-4 p-4 bg-indigo-50 rounded-xl">
+                                <span class="text-2xl text-indigo-600 flex-shrink-0">📈</span>
+                                <div>
+                                    <p class="font-semibold text-gray-900">Taxa de Confirmação Média: **98%**</p>
+                                    <p class="text-gray-600 text-sm">Reduzimos a taxa de *no-show* de 15% para menos de 2%.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4 p-4 bg-indigo-50 rounded-xl">
+                                <span class="text-2xl text-indigo-600 flex-shrink-0">💰</span>
+                                <div>
+                                    <p class="font-semibold text-gray-900">Receita Potencial Recuperada: **+ R$ 1.500/mês**</p>
+                                    <p class="text-gray-600 text-sm">Baseado no valor médio de consultas perdidas em clínicas parceiras.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button id="show-nps-data" class="mt-6 text-sm text-indigo-600 font-semibold hover:text-indigo-800 transition duration-300">
+                            Clique para ver a Simulação de Faturamento
+                        </button>
+                    </div>
+
+                    <!-- Chart Container 2: Dynamic ROI Simulation -->
+                    <div class="bg-gray-50 p-6 rounded-2xl card">
+                        <h3 class="text-xl font-semibold mb-4 text-gray-700 text-center">Simulação de Faturamento (3 Meses)</h3>
+                        <div class="chart-container w-full h-72 md:h-96">
+                            <canvas id="roiSimulationChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Final & Form -->
+        <section id="contato" class="py-20 sm:py-24 bg-indigo-600">
+            <div class="container-padding mx-auto max-w-4xl text-center text-white">
+                <h2 class="text-3xl sm:text-5xl font-extrabold mb-4">
+                    Pronto para ter Zero Faltas?
+                </h2>
+                <p class="text-xl font-light mb-10">
+                    Comece o seu **Trial Gratuito de 30 Dias** do Módulo CORE. Sem cartão de crédito, sem compromisso.
+                </p>
+                
+                <form id="trialForm" class="bg-white p-6 md:p-8 rounded-2xl shadow-2xl text-gray-800">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <input type="text" id="name" placeholder="Seu Nome Completo" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
+                        <input type="email" id="email" placeholder="Seu Email Profissional" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
+                        <input type="tel" id="phone" placeholder="WhatsApp (com DDD)" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
+                        <select id="segment" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 appearance-none bg-white">
+                            <option value="">Selecione o Segmento</option>
+                            <option value="Odontologia">Odontologia</option>
+                            <option value="Medicina">Medicina</option>
+                            <option value="Fisioterapia">Fisioterapia</option>
+                            <option value="Estética">Estética</option>
+                            <option value="Outros">Outros</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="cta-button mt-6 w-full bg-indigo-600 hover:bg-indigo-700 text-white py-3 rounded-lg text-lg font-semibold transition duration-300 shadow-lg">
+                        Começar 30 Dias Grátis
+                    </button>
+                    <p id="message-box" class="mt-4 text-sm text-center text-green-600 hidden"></p>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-900 py-8">
+        <div class="container-padding mx-auto max-w-7xl text-center text-gray-400 text-sm">
+            <p>&copy; 2025 Nexias.app. Todos os direitos reservados.</p>
+            <div class="mt-2 space-x-4">
+                <a href="#" class="hover:text-white transition duration-150">Termos de Uso</a>
+                <a href="#" class="hover:text-white transition duration-150">Política de Privacidade</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MOVEMOS A IMPORTAÇÃO DA BIBLIOTECA PARA O FINAL DO BODY -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js" xintegrity="sha512-30k8xXwA/48X+Uv/lA2z/2fA7rP8C4b+5o2+4+5g4/2+5P4+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/2+5g4/
